@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-    color: rgb(26, 26, 26);
+    /* color: rgb(26, 26, 26); */
+    color: rgb(211, 211, 211);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,6 +9,16 @@
 
 body {
     background-color: rgb(216, 216, 216);
+}
+
+p {
+    font-size: 22px;
+}
+
+a,
+li,
+span {
+    font-size: 18px;
 }
 
 header {
@@ -36,7 +47,7 @@ header {
 .container {
     max-width: 1512px;
     width: 100%;
-    background-color: rgb(133, 133, 133);
+    background-color: rgb(36, 36, 36);
     margin: 0 auto;
     padding: 20px;
     /* border-radius: 50px; */
@@ -61,6 +72,7 @@ h2 {
     display: flex;
     gap: 20px;
     align-items: center;
+    flex-direction: column;
 }
 
 .user_info span {
@@ -90,15 +102,11 @@ h2 {
 }
 
 footer {
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(30, 30, 30);
     padding: 50px;
     display: flex;
     justify-content: space-around;
-}
-
-footer li,
-footer a {
-    color: rgb(255, 255, 255);
+    box-shadow: 0 -4px 18px rgb(81 81 81);
 }
 
 footer li {

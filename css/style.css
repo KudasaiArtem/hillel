@@ -1,3 +1,60 @@
+:root {
+    font-family: "Lato";
+    color: rgba(0, 0, 0, 1);
+}
+
 * {
     box-sizing: border-box;
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+header {
+    background: rgba(249, 247, 232, 1);
+    padding: 24px 0;
+}
+
+.header {
+    display: flex;
+    gap: 79px;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Courgette";
+    font-size: 32px;
+    line-height: 40px;
+    color: rgba(98, 191, 173, 1);
+}
+
+.logo span {
+    color: rgba(0, 0, 0, 1);
+}
+
+.menu {
+    display: flex;
+    gap: 21px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0em;
+}
+
+.section1 {
+    background: rgba(213, 32, 71, 1);;
+}
+
+h1 {
+    font-family: "Limelight";
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: 0em;
+    text-align: center;
 }

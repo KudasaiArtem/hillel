@@ -15,6 +15,8 @@
 header {
     background: rgba(249, 247, 232, 1);
     padding: 24px 0;
+    position: sticky;
+    top: 0;
 }
 
 .header {
@@ -25,13 +27,13 @@ header {
 
 .logo {
     font-family: "Courgette";
+    color: rgb(98, 191, 173);
     font-size: 32px;
-    line-height: 40px;
-    color: rgba(98, 191, 173, 1);
 }
 
 .logo span {
-    color: rgba(0, 0, 0, 1);
+    color: rgb(0, 0, 0);
+    font-size: 32px;
 }
 
 .menu {
@@ -40,21 +42,127 @@ header {
 }
 
 .menu a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 1);
+    color: rgb(0, 0, 0);
     font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0em;
 }
 
 .section1 {
-    background: rgba(213, 32, 71, 1);;
+    background: rgba(213, 32, 71, 1);
+    padding: 198px 0 172px 0;
 }
 
 h1 {
     font-family: "Limelight";
-    font-size: 48px;
-    line-height: 58px;
-    letter-spacing: 0em;
+    color: rgb(255, 255, 255);
     text-align: center;
+    font-size: 48px;
+    text-transform: uppercase;
+    width: 738px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: rgb(213, 32, 71);
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section2 {
+    padding: 95px 0 80px 0;
+    background: rgb(239, 248, 246);
+}
+
+.content {
+    border-radius: 8px;
+    background: rgb(229, 229, 229);
+    padding: 24px;
+    margin-top: 40px;
+    background-image: url("../img/about-image.jpg");
+    background-position: right center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.content p {
+    max-width: 507px;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+.section3 {
+    background: rgb(255, 255, 255);
+    padding: 80px 0;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 72px;
+    margin-top: 40px;
+}
+
+.card {
+    border-radius: 8px;
+    border: 2px solid rgb(229, 229, 229);
+    padding: 24px;
+}
+
+.card_content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.card_content img {
+    width: 274px;
+    height: auto;
+}
+
+.card_content p {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+.card_content a {
+    color: rgb(213, 32, 71);
+    font-size: 16px;
+    text-decoration-line: underline;
+}
+
+footer {
+    background: rgb(249, 247, 232);
+    padding: 32px 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.linking_icons {
+    display: flex;
+    gap: 16px;
+}
+
+.info span {
+    color: #000;
+    font-size: 16px;
+}
+
+.underline {
+    text-decoration-line: underline;
 }

@@ -29,18 +29,21 @@ main {
 
 nav,
 aside {
-    max-width: 25em;
+    /* max-width: 25em; */
     min-width: 112px;
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 20px;
     background-color: rgb(171, 132, 207);
+    flex: 1;
 
 }
 
 section {
-    max-width: 50em;
+    /* max-width: 50em; */
+    width: 100%;
+    flex: 5g;
 }
 
 footer {

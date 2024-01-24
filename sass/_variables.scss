@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$primary: rgba(52, 84, 122, 1);
+$black: rgba(0, 0, 0, 1);
+$gray: rgba(114, 114, 114, 1);
+$silver: rgba(238, 239, 241, 1);
+$white: rgba(255, 255, 255, 1);
+
+$font-w: ("normal": 400, "bold": 500);
+$font-s: ("small": 16px, "medium": 21px, "large": 32px);
+
+@mixin font {
+    font-family: "Roboto";
+    font-style: normal;
+}

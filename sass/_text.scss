@@ -1,0 +1,5 @@
+h1 {
+    font-weight: map-get($font-w, "bold");
+    font-size: 48px;
+    color: $black;
+}

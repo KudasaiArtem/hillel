@@ -34,8 +34,99 @@ ul {
 a {
     text-decoration: none;
     font-size: map-get($font-s, "small");
+    color: $black;
+
+    &:hover {
+        color: $primary;
+    }
 }
 
 h1 {
     margin: 150px 0 60px 0;
+}
+
+p {
+    max-width: 540px;
+    color: $gray;
+    font-size: map-get($font-s, "small");
+}
+
+.btn {
+    padding: 20px 40px;
+    font-size: map-get($font-s, "small");
+    color: $white;
+    border: 0;
+    transition: 0.3s;
+
+    &:hover {
+        color: $primary;
+        background-color: $white;
+        border: 2px  $black;
+        box-shadow: 0 0 5px $black;
+    }
+    
+    &:active {
+        background-color: $primary;
+        color: $white;
+    }
+}
+
+.spacing {
+    margin-bottom: 65px;
+}
+
+.about {
+    padding: 112px 0 100px 0;
+}
+
+.about-align {
+    @include flex-column;
+    gap: 50px;
+    align-items: center;
+
+    p {
+        text-align: center;
+    }
+}
+
+.card {
+    @include flex-between;
+    gap: 20px;
+
+    div {
+        @include flex-column;
+        gap: 10px;
+    }
+
+    span {
+        color: $white;
+        display: block;
+    }
+}
+
+.cards-align {
+    @include flex-between;
+    padding: 100px 0;
+}
+
+.description {
+    padding: 100px 0;
+}
+
+.description-align {
+    @include flex-column;
+    align-items: center;
+    gap: 50px;
+}
+
+.video {
+    padding-top: 8px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
 }

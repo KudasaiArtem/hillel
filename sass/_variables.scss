@@ -13,3 +13,13 @@ $font-s: ("small": 16px, "medium": 21px, "large": 32px);
     font-family: "Roboto";
     font-style: normal;
 }
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}

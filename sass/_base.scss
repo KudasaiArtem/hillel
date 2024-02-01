@@ -11,6 +11,7 @@
 .container {
     margin: 0 auto;
     max-width: 1110px;
+
 }
 
 .section1 {
@@ -27,6 +28,9 @@
 
 h1 {
     margin: 150px 0 60px 0;
+    @include sm {
+        margin-top: 0;
+    }
 }
 
 p {
@@ -74,7 +78,7 @@ p {
 }
 
 .card {
-    @include flex-between;
+    display: flex;
     gap: 20px;
 
     div {
@@ -91,20 +95,38 @@ p {
 .cards-align {
     @include flex-between;
     padding: 100px 0;
+
+    @include sm {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        gap: 20px;
+    }
 }
 
 .description {
     padding: 100px 0;
 }
 
-.description-align {
+.work-align {
     @include flex-column;
     align-items: center;
+    gap: 58px;
+
+    @include lg {
+        @include flex-row;
+        justify-content: space-between;
+    }
+}
+
+.description-align {
+    @include flex-column;
     gap: 50px;
+    align-items: center;
+    width: 100%;
 }
 
 .video {
-    padding-top: 8px;
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;

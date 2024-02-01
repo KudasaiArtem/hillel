@@ -1,0 +1,23 @@
+$screen: (
+    "sm": 720px,
+    "md": 1110px,
+    "lg": 1920px,
+);
+
+@mixin sm {
+    @media (max-width: map-get($screen, "sm")) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: map-get($screen, "md")) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: map-get($screen, "lg")) {
+        @content;
+    }
+}

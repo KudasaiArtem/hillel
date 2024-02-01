@@ -23,3 +23,8 @@ $font-s: ("small": 16px, "medium": 21px, "large": 32px);
     display: flex;
     flex-direction: column;
 }
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}

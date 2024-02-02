@@ -13,6 +13,7 @@ a {
     font-size: map-get($font-s, "small");
     color: $black;
     transition: 0.3s;
+    white-space: nowrap;
 
     &:hover {
         color: $primary;
@@ -39,11 +40,14 @@ a {
 
 .menu-slide {
     position: absolute;
-    right: -30%;
+    right: 25px;
     top: 75px;
     transition: 0.3s;
-    padding: 20px;
     border-radius: 10px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
 .menu {
@@ -53,6 +57,9 @@ a {
     background-color: $white;
     box-shadow: -3px 3px 10px $black;
     z-index: 999;
+    transition: 0.3s;
+    width: 144px;
+    height: 200px;
 }
 
 .nav-bar-menu {
@@ -60,4 +67,7 @@ a {
     flex-direction: column;
     gap: 16px;
     list-style-type: none;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px;
 }

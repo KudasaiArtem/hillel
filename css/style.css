@@ -15,6 +15,7 @@ a {
   font-size: 16px;
   color: rgb(0, 0, 0);
   transition: 0.3s;
+  white-space: nowrap;
 }
 a:hover {
   color: rgb(52, 84, 122);
@@ -40,11 +41,14 @@ a:hover {
 
 .menu-slide {
   position: absolute;
-  right: -30%;
+  right: 25px;
   top: 75px;
   transition: 0.3s;
-  padding: 20px;
   border-radius: 10px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  transition: 0.3s;
 }
 
 .menu {
@@ -54,6 +58,9 @@ a:hover {
   background-color: rgb(255, 255, 255);
   box-shadow: -3px 3px 10px rgb(0, 0, 0);
   z-index: 999;
+  height: 200px;
+  transition: 0.3s;
+  width: 144px;
 }
 
 .nav-bar-menu {
@@ -61,6 +68,9 @@ a:hover {
   flex-direction: column;
   gap: 16px;
   list-style-type: none;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 :root {

@@ -2,6 +2,10 @@ h1 {
     font-weight: map-get($font-w, "bold");
     font-size: 48px;
     color: $black;
+
+    @include sm {
+        font-size: 36px;
+    }
 }
 
 h2 {

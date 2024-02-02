@@ -1,4 +1,4 @@
-ul {
+.nav-bar {
     list-style-type: none;
     display: flex;
     gap: 42px;
@@ -24,8 +24,8 @@ a {
     width: 50px;
     height: 50px;
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 25px;
+    right: 25px;
     border-radius: 6px;
     border: 0;
     background-color: rgb(139, 139, 139);
@@ -37,11 +37,27 @@ a {
     }
 }
 
-.menu {
+.menu-slide {
     position: absolute;
-    top: 80px;
-    right: 30px;
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+    right: -30%;
+    top: 75px;
+    transition: 0.3s;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.menu {
+    display: block;
+    position: absolute;
+    right: 25px;
+    background-color: $white;
+    box-shadow: -3px 3px 10px $black;
+    z-index: 999;
+}
+
+.nav-bar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style-type: none;
 }

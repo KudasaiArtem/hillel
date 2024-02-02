@@ -12,10 +12,19 @@
     margin: 0 auto;
     max-width: 1110px;
 
+    @include md {
+        max-width: 740px;
+        padding: 0 20px;
+    }
+
 }
 
 .section1 {
     padding: 80px 0 140px 0;
+
+    @include sm {
+        padding: 75px 0;
+    }
 }
 
 .bg-silver {
@@ -30,6 +39,7 @@ h1 {
     margin: 150px 0 60px 0;
     @include sm {
         margin-top: 0;
+        text-align: center;
     }
 }
 
@@ -37,6 +47,11 @@ p {
     max-width: 540px;
     color: $gray;
     font-size: map-get($font-s, "small");
+
+    @include sm {
+        text-align: center;
+        margin: 0 auto;
+    }
 }
 
 .btn {
@@ -57,6 +72,12 @@ p {
         background-color: $primary;
         color: $white;
     }
+
+    @include sm {
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+    }
 }
 
 .spacing {
@@ -65,6 +86,10 @@ p {
 
 .about {
     padding: 112px 0 100px 0;
+
+    @include sm {
+        padding: 75px 0;
+    }
 }
 
 .about-align {
@@ -90,17 +115,37 @@ p {
         color: $white;
         display: block;
     }
+
+    @include md {
+        gap: 10px;
+        // flex-direction: column;
+        // align-items: center;
+        
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        div {
+            gap: 4px;
+        }
+    }
 }
 
 .cards-align {
     @include flex-between;
     padding: 100px 0;
 
+    @include md {
+        padding: 75px 20px;
+    }
+
     @include sm {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
         gap: 20px;
+        padding: 50px 20px;
     }
 }
 

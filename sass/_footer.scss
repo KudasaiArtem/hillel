@@ -1,10 +1,18 @@
 footer {
     padding: 50px 0;
     color: $white;
+
+    @include sm {
+        padding: 25px 0;
+    }
 }
 
 .name {
     font-weight: map-get($font-w, "bold");
     font-size: map-get($font-s, "medium");
     margin-bottom: 20px;
+
+    @include sm {
+        margin-bottom: 10px;
+    }
 }

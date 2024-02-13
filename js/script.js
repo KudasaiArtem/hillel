@@ -65,4 +65,36 @@ btn.addEventListener("click", (event) => {
     let cat_id = event.target.value;
 
     showCat(cats[cat_id]);
+
+    if (cat_id == 0) {
+        document.querySelector(".empty").classList.add("left");
+        document.querySelector(".empty").classList.remove("right");
+
+        document.querySelector("#btn1").classList.add("button-active");
+        document.querySelector("#btn2").classList.remove("button-active");
+        document.querySelector("#btn3").classList.remove("button-active");
+    }
+
+    if (cat_id == 1) {
+        document.querySelector(".empty").classList.remove("left");
+        document.querySelector(".empty").classList.remove("right");
+
+        document.querySelector("#btn1").classList.remove("button-active");
+        document.querySelector("#btn2").classList.add("button-active");
+        document.querySelector("#btn3").classList.remove("button-active");
+    }
+
+    if (cat_id == 2) {
+        document.querySelector(".empty").classList.add("right");
+        document.querySelector(".empty").classList.remove("left");
+
+        document.querySelector("#btn1").classList.remove("button-active");
+        document.querySelector("#btn2").classList.remove("button-active");
+        document.querySelector("#btn3").classList.add("button-active");
+    }
 })
+
+window.onload = (event) => {
+    document.querySelector("#btn2").classList.add("button-active");
+    showCat(cats[1]);
+}

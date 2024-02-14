@@ -62,7 +62,7 @@ const showCat = function(cat) {
 
     document.querySelector("#name").textContent = cat.name;
 
-    document.querySelector("#status").textContent = cat.status;
+    document.querySelector("#status").textContent = cat.status === false ? "не спить" : "спить";
 }
 
 const moveOn = function(button) {

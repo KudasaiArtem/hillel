@@ -32,13 +32,13 @@ function Cat(breed = "немає", age, gender, color, name, status, picture) {
 }
 
 // додаємо котів за допомогою конструктора
-const cat1 = new Cat(undefined, 1, "female", "біло-сірий", "біляш", "не спить", "./cat_pic/cat1.jfif");
+const cat1 = new Cat(undefined, 1, "female", "біло-сірий", "не спить", "не спить", "./cat_pic/cat1.jfif");
 
 // console.log(cat1);
 
-const cat2 = new Cat(undefined, 2, "male", "сірий", "мурчик", undefined, "./cat_pic/cat2.jpg");
+const cat2 = new Cat(undefined, 2, "male", "сірий", "мурчик", "не спить", "./cat_pic/cat2.jpg");
 
-const cat3 = new Cat(undefined, 4, "male", "чорний", "чебурек", undefined, "./cat_pic/cat3.jpg");
+const cat3 = new Cat(undefined, 4, "male", "чорний", "чебурек", true, "./cat_pic/cat3.jpg");
 
 //масив із котів
 const cats = [cat1, cat2, cat3];

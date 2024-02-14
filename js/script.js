@@ -18,15 +18,17 @@ function Cat(breed = "немає", age, gender, color, name, status, picture) {
         }
     }
 
-    this.goSleep = function () {
-        if (this.status === true) {
+    this.isSleep = function () {
+        if (this.status === false) {
+            this.status = true;
             return "спить";
         }
     }
 
     this.wakeUp = function () {
-        if (this.status === false) {
-            return "не спить";
+        if (this.status === true) {
+            this.status = false;
+            return "прокинувся";
         }
     }
 }

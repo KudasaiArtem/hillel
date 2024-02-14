@@ -14,19 +14,19 @@ function Cat(breed = "немає", age, gender, color, name, status, picture) {
     // методи
     this.askToEat = function() {
         if (this.status === false) {
-            return this.status = "хочу їсти";
+            return "хочу їсти";
         }
     }
 
     this.goSleep = function () {
         if (this.status === true) {
-            return this.status = "спить";
+            return "спить";
         }
     }
 
     this.wakeUp = function () {
         if (this.status === false) {
-            return this.status = "не спить";
+            return "не спить";
         }
     }
 }

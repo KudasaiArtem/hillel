@@ -1,31 +1,38 @@
 // конструктор
-function Cat(breed = "немає", age, gender, color, name, status = "не спить", picture) {
+function Cat(breed = "немає", age, gender, color, name, status, picture) {
     this.breed = breed;
     this.age = age;
     this.gender = gender;
     this.color = color;
     this.name = name;
     this.picture = picture;
+    if (typeof status == "string") {
+        status = false; // не спить
+    }
     this.status = status;
 
     // методи
     this.askToEat = function() {
-        if (this.status === "не спить") {
+        if (this.status === false) {
             return this.status = "хочу їсти";
         }
     }
 
     this.goSleep = function () {
-        return this.status = "спить";
+        if (this.status === true) {
+            return this.status = "спить";
+        }
     }
 
     this.wakeUp = function () {
-        return this.status = "не спить";
+        if (this.status === false) {
+            return this.status = "не спить";
+        }
     }
 }
 
 // додаємо котів за допомогою конструктора
-const cat1 = new Cat(undefined, 1, "female", "біло-сірий", "біляш", undefined, "./cat_pic/cat1.jfif");
+const cat1 = new Cat(undefined, 1, "female", "біло-сірий", "біляш", "не спить", "./cat_pic/cat1.jfif");
 
 // console.log(cat1);
 
@@ -37,7 +44,7 @@ const cat3 = new Cat(undefined, 4, "male", "чорний", "чебурек", und
 const cats = [cat1, cat2, cat3];
 
 
-const btn = document.querySelector(".button-block");
+const btn = document.querySelectorAll("button");
 
 // виводить данні про кота
 const showCat = function(cat) {
@@ -45,7 +52,6 @@ const showCat = function(cat) {
 
     picture.src = cat.picture;
 
-    // document.querySelector("#breed").innerHTML = cat.breed;
     document.querySelector("#breed").textContent = cat.breed;
 
     document.querySelector("#age").textContent = cat.age;
@@ -59,42 +65,34 @@ const showCat = function(cat) {
     document.querySelector("#status").textContent = cat.status;
 }
 
+const moveOn = function(button) {
+    const empty = document.querySelector('.empty');
+
+    let style = document.querySelector(".button-block");
+    let paddingLeft = getComputedStyle(style).paddingLeft;
+
+    const newLeft = button.offsetLeft - parseInt(paddingLeft);
+    console.log(button.offsetLeft);
+
+    btn.forEach((notActive) => {
+        notActive.classList.remove("button-active");
+    })
+    button.classList.add("button-active");
+
+    empty.style.left = newLeft + "px";
+}
+
 
 // викликає функцію для відображання данних про кота
-btn.addEventListener("click", (event) => {
-    let cat_id = event.target.value;
-
-    showCat(cats[cat_id]);
-
-    if (cat_id == 0) {
-        document.querySelector(".empty").classList.add("left");
-        document.querySelector(".empty").classList.remove("right");
-
-        document.querySelector("#btn1").classList.add("button-active");
-        document.querySelector("#btn2").classList.remove("button-active");
-        document.querySelector("#btn3").classList.remove("button-active");
-    }
-
-    if (cat_id == 1) {
-        document.querySelector(".empty").classList.remove("left");
-        document.querySelector(".empty").classList.remove("right");
-
-        document.querySelector("#btn1").classList.remove("button-active");
-        document.querySelector("#btn2").classList.add("button-active");
-        document.querySelector("#btn3").classList.remove("button-active");
-    }
-
-    if (cat_id == 2) {
-        document.querySelector(".empty").classList.add("right");
-        document.querySelector(".empty").classList.remove("left");
-
-        document.querySelector("#btn1").classList.remove("button-active");
-        document.querySelector("#btn2").classList.remove("button-active");
-        document.querySelector("#btn3").classList.add("button-active");
-    }
-})
+btn.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        let cat_id = event.target.value;
+        
+        showCat(cats[cat_id]);
+        moveOn(button);
+    });
+});
 
 window.onload = (event) => {
-    document.querySelector("#btn2").classList.add("button-active");
-    showCat(cats[1]);
+    showCat(cats[0]);
 }

@@ -9,20 +9,20 @@
 
 <body>
     <main>
-        <form action="" method="get">
+        <form action="" method="post">
             <div class="inputs">
                 <label for="userName">User Name</label>
-                <input type="text" name="userName" id="userName">
+                <input type="text" name="userName" id="userName" required minlength="2" maxlength="15">
             </div>
             
             <div class="inputs">
                 <label for="userAge">User Age</label>
-                <input type="number" name="userAge" id="userAge" min="7" max="90">
+                <input type="number" name="userAge" id="userAge" min="7" max="90" required>
             </div>
             
             <div class="inputs">
                 <label for="cookieAge">Cookie Age</label>
-                <input type="number" name="cookieAge" id="cookieAge" min="0" max="7">
+                <input type="number" name="cookieAge" id="cookieAge" min="0" max="7" required>
             </div>
 
             <button type="button" id="writeCookie">Write your cookie</button>

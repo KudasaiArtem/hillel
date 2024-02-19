@@ -20,7 +20,7 @@ form {
 }
 
 .inputs {
-    width: 50%;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -63,4 +63,9 @@ button:hover {
 
 button:active {
     transform: scale(0.9);
+}
+
+#output {
+    text-align: center;
+    margin-top: 24px;
 }

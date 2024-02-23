@@ -1,3 +1,18 @@
 * {
     box-sizing: border-box;
 }
+
+.logo {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.table {
+    --bs-table-color: var(--bs-body-color)!important;
+    font-weight: 400 !important;
+}
+
+table th,
+table td {
+    font-weight: normal !important;
+}

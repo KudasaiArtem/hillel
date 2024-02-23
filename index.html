@@ -4,10 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
+    <header>
+        <div class="container-md p-4 border-bottom border-secondary border-3">
+            <div class="d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge logo"
+                    viewBox="0 0 16 16">
+                    <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path
+                        d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492z" />
+                </svg>
+
+                <span class="fs-4">Contacts</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-md">
+            <form action="/" method="post" class="d-flex flex-column align-items-center gap-5 pt-5">
+                <div class="d-flex gap-5 w-75 justify-content-center ">
+                    <div class="d-flex gap-3 align-items-center flex-wrap">
+                        <label class="fs-5 text-nowrap" for="userName">Ім'я</label>
+                        <input class="rounded-4  fs-5 form-control w-auto d-inline" type="text" name="userName" id="userName" required>
+                    </div>
+                    
+                    <div class="d-flex gap-3 align-items-center flex-wrap">
+                        <label class="fs-5 text-nowrap" for="phoneNum">Номер телефону</label>
+                        <input class="rounded-4  fs-5 form-control w-auto d-inline" type="tel" name="phoneNum" id="phoneNum" required>
+                    </div>
+                </div>
+
+                <button class="p-3 fs-5 rounded-4 btn btn-success" type="button" id="addContact">Додати контакт</button>
+            </form>
+
+            <table class="table table-striped fs-5 fw-normal">
+                <thead>
+                    <tr>
+                        <th>Ім'я</th>
+                        <th>Номер телефону</th>
+                        <th>Дата додавання</th>
+                    </tr>
+                </thead>
+            </table>
+            <tbody>
+                
+            </tbody>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-md">
+
+        </div>
+    </footer>
+
     <script src="./js/script.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 
     <main>
         <div class="container-md">
-            <form action="/" method="post" class="d-flex flex-column align-items-center gap-5 pt-5">
+            <form action="/" method="post" class="d-flex flex-column align-items-center gap-5 pt-5 pb-5">
                 <div class="d-flex gap-5 w-75 justify-content-center ">
                     <div class="d-flex gap-3 align-items-center flex-wrap">
                         <label class="fs-5 text-nowrap" for="userName">Ім'я</label>
@@ -35,25 +35,36 @@
                     
                     <div class="d-flex gap-3 align-items-center flex-wrap">
                         <label class="fs-5 text-nowrap" for="phoneNum">Номер телефону</label>
-                        <input class="rounded-4  fs-5 form-control w-auto d-inline" type="tel" name="phoneNum" id="phoneNum" required>
+                        <input class="rounded-4  fs-5 form-control w-auto d-inline" type="tel" name="phoneNumber" id="phoneNumber" required>
                     </div>
                 </div>
 
-                <button class="p-3 fs-5 rounded-4 btn btn-success" type="button" id="addContact">Додати контакт</button>
+                <button class="p-3 fs-5 rounded-4 btn btn-success" type="button" id="addContact">
+                    Додати контакт
+
+                    <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-plus-fill"
+                        viewBox="0 0 16 16">
+                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                        <path fill-rule="evenodd"
+                            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                    </svg>
+                </button>
             </form>
 
-            <table class="table table-striped fs-5 fw-normal">
+            <table class="table fs-5 fw-normal">
                 <thead>
                     <tr>
                         <th>Ім'я</th>
                         <th>Номер телефону</th>
                         <th>Дата додавання</th>
+                        <th></th>
                     </tr>
                 </thead>
-            </table>
-            <tbody>
+
+                <tbody id="contactRow">
                 
-            </tbody>
+                </tbody>
+            </table>
         </div>
     </main>
 

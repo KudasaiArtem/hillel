@@ -16,3 +16,7 @@ table th,
 table td {
     font-weight: normal !important;
 }
+
+svg {
+    pointer-events: none;
+}

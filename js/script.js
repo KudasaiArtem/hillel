@@ -25,10 +25,11 @@ let inputPhoneNum = document.querySelector("#phoneNumber");
 
 
 button.addEventListener("click", () => {
-    if (inputName.value != "" && inputPhoneNum.value != "") {
+    if (inputName.value != "" && inputPhoneNum.value != "" && !isNaN(inputPhoneNum.value)) {
         Storage.addContact();
     } else {
         console.error("ERROR");
+        UI.errorMessage();
     }
 })
 
@@ -52,7 +53,7 @@ class Storage {
         arr.push(contact);
         console.log(arr);
 
-        localStorage.setItem("contact", JSON.stringify(arr));
+        localStorage.setItem("contacts", JSON.stringify(arr));
 
         UI.displayContact(contact);
 
@@ -61,7 +62,7 @@ class Storage {
 
     static readContacts() {
         let list = [];
-        let storage = localStorage.getItem("contact");
+        let storage = localStorage.getItem("contacts");
 
         if (storage !== null) {
             list = JSON.parse(storage);
@@ -79,7 +80,7 @@ class Storage {
                 list.splice(i, 1);
             }
 
-            localStorage.setItem("contact", JSON.stringify(list));
+            localStorage.setItem("contacts", JSON.stringify(list));
         })
     }
 }
@@ -115,6 +116,18 @@ class UI {
     static deleteRow(elemId) {
         console.log(elemId);
         document.querySelector(`.${elemId}`).remove();
+    }
+
+    static errorMessage() {
+        let errorMessage = document.querySelector("#errorMessage");
+        errorMessage.style.height = "auto";
+        errorMessage.classList.add("p-4");
+
+
+        window.setTimeout(() => {
+            errorMessage.classList.remove("p-4");
+            document.querySelector("#errorMessage").style.height = "0";
+        }, 3000);
     }
 }
 

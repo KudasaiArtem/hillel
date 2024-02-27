@@ -20,3 +20,9 @@ table td {
 svg {
     pointer-events: none;
 }
+
+#errorMessage {
+    transition: 0.2s;
+    height: 0;
+    overflow: hidden;
+}

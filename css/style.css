@@ -1,3 +1,124 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+}
+
+.container {
+    max-width: 1060px;
+    padding: 0 10px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+.logo {
+    padding: 1rem 0;
+}
+
+svg {
+    height: 32px;
+    fill: rgb(255, 255, 255);
+}
+
+.content {
+    padding: 2rem 0;
+    display: flex;
+    gap: 24px;
+}
+
+aside {
+    padding: 1.5rem;
+    border-radius: 24px;
+    background-color: rgb(128, 128, 128);
+    box-shadow: 4px 4px 16px rgb(20, 20, 20);
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.inputs_align {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+select,
+option {
+    background-color: rgb(36, 36, 36);
+    padding: 0.25rem;
+    border-radius: 12px;
+}
+
+button {
+    padding: 0.5rem 1.5rem;
+    background-color: rgb(36, 36, 36);
+    border: 0;
+    cursor: pointer;
+    border-radius: 24px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+section {
+    width: 100%;
+}
+
+.cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    padding: 1rem;
+    background-color: rgb(128, 128, 128);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-basis: 200px;
+    gap: 1rem;
+    box-shadow: 0 4px 16px rgb(20, 20, 20);
+}
+
+.picture {
+    overflow: hidden;
+    max-width: 164px;
+    max-height: 219px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: calc(24px - 1rem);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }

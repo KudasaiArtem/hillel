@@ -1,6 +1,11 @@
 const api = "https://api.spacexdata.com/v4/crew";
 
+const SelectAgency = document.querySelector("#SelectAgency");
+const method = document.querySelector("#method");
 const button = document.querySelector("#btn");
+
+const cards = document.querySelector(".cards");
+
 
 // використовуємо XMLHttpRequest
 const use_XMLHttpRequest = function() {
@@ -30,12 +35,32 @@ const use_XMLHttpRequest = function() {
 
 // використовуємо Ajax
 const use_Ajax = function () {
-
+    $.ajax({
+        type: "GET",
+        url: api,
+        datatype: "json",
+    }).done(function (data) {
+        DisplayAstronaut.filterData(data);
+    })
 }
 
 // використовуємо Fetch
 const use_Fetch = function () {
+    fetch(api)
+        .then((response) => {
+            // console.log(response.json()); не знаю чому, але з ним код не працює
 
+            return response.json();
+        })
+
+        .then((data) => {
+            console.log(data);
+            DisplayAstronaut.filterData(data);
+        })
+
+        .catch((response) => {
+            console.error("Error", response.status);
+        })
 }
 
 class DisplayAstronaut {
@@ -43,7 +68,7 @@ class DisplayAstronaut {
     static filterData(data) {
         // console.log(data);
         let filtered = data.filter((person) => {
-            return person.agency === "NASA";
+            return person.agency === SelectAgency.value;
         })
 
 
@@ -67,7 +92,6 @@ class DisplayAstronaut {
 
     //
     static renderCards(astronaut) {
-        const cards = document.querySelector(".cards");
         cards.innerHTML += `
                             <div class="card">
                                 <div class="picture">
@@ -85,6 +109,23 @@ class DisplayAstronaut {
 
 
 button.addEventListener("click", () => {
-    use_XMLHttpRequest();
+    cards.innerHTML = "";
+    
+    switch (method.value) {
+        case "XMLHttpRequest":
+            use_XMLHttpRequest();
+            break;
+        
+        case "Ajax":
+            use_Ajax();
+            break;
+        
+        case "Fetch":
+            use_Fetch();
+            break;
 
+        default:
+            console.error("Choose method");
+            break;
+    }
 })

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
@@ -45,18 +46,20 @@
                         <label for="method">Метод отримання данних</label>
                         <select name="method" id="method">
                             <option value="" disabled selected>-</option>
-                            <option value="">XMLHttpRequest</option>
-                            <option value="">Ajax</option>
-                            <option value="">Fetch</option>
+                            <option value="XMLHttpRequest">XMLHttpRequest</option>
+                            <option value="Ajax">Ajax</option>
+                            <option value="Fetch">Fetch</option>
                         </select>
                     </div>
             
                     <div class="inputs_align">
                         <label for="agency">Агенція</label>
-                        <select name="agency" id="agencySelect">
+                        <select name="agency" id="SelectAgency">
                             <option value="NASA">NASA</option>
                             <option value="JAXA">JAXA</option>
                             <option value="ESA">ESA</option>
+                            <option value="SpaceX">SpaceX</option>
+                            <option value="Axiom Space">Axiom Space</option>
                         </select>
                     </div>
 

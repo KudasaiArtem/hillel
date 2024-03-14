@@ -1,3 +1,49 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: rgb(230, 230, 230);
+}
+
+body {
+    background-color: rgb(49, 49, 49);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 720px;
+    width: 100%;
+    padding: 50px 25px;
+    margin-top: 54px;
+    border-radius: 24px;
+    background-color: rgb(94, 94, 94);
+}
+
+form {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#filterColor {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    width: 100px;
+}
+
+#canvas {
+    width: 100%;
+    border-radius: 24px;
+    border: 4px solid rgb(49, 49, 49);
 }

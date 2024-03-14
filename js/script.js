@@ -2,25 +2,23 @@ const inputColor = document.querySelector("#filterColor");
 const inputAlpha = document.querySelector("#alphaChannel");
 
 const canvas = document.querySelector("#canvas");
-canvas.width = canvas.parentElement.offsetWidth - 8;
-canvas.height = canvas.parentElement.offsetHeight -8;
+canvas.width = canvas.parentElement.offsetWidth - 8; // віднімаємо 8 від ширини
+canvas.height = canvas.parentElement.offsetHeight -8; // та висоти через бордер
 
 const ctx = canvas.getContext("2d");
 
+// завантажуємо зображення
+let img = new Image();
+img.src = "./img/photo.jpg";
+
 class ApplyFilter {
     static drawImage () {
-        let img = new Image();
-        img.src = "./img/photo.jpg";
         img.onload = () => {
-            // ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-            let pattern = ctx.createPattern(img, "no-repeat");
-            ctx.fillStyle = pattern;
-            ctx.fillRect(0, 0, canvas.width, canvas.height)
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         }
     }
 
-    static drawSelectedZone () {
+    static drawFilterArea () {
         let coordinates = {
             x:0,
             y:0,
@@ -39,8 +37,6 @@ class ApplyFilter {
 
             console.log(coordinates.x, coordinates.y);
 
-            ApplyFilter.addFilter(coordinates.x, coordinates.y);
-
             startCoordsX = coordinates.x;
             startCoordsY = coordinates.y;
         })
@@ -54,24 +50,30 @@ class ApplyFilter {
             console.log(coordinates.x, coordinates.y);
 
             startCoordsY = coordinates.y;
-
-            ApplyFilter.addFilter(coordinates.x, coordinates.y);
         })
 
         canvas.addEventListener("mousemove", function (e) {
             if (isMouseDown === true) {
                 // очистка поля та перемальовуваня
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.globalAlpha = 1;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
                 coordinates.x = e.clientX - canvas.offsetLeft;
                 coordinates.y = e.clientY - canvas.offsetTop;
 
                 ctx.beginPath();
-                ctx.rect(startCoordsX, startCoordsY, coordinates.x, coordinates.y);
-                ctx.fillStyle = 'rgb(255, 0, 0)';
+
+                ctx.globalAlpha = inputAlpha.value;
+
+                // вирахування прямокутника від точки, де відбувся "mousedown",
+                // далі розраховується ширина і висота, спираючись на координати мишки.
+                ctx.rect(startCoordsX, startCoordsY, coordinates.x - startCoordsX, coordinates.y - startCoordsY);
+                
+                ctx.fillStyle = inputColor.value;
                 ctx.fill();
                 ctx.lineWidth = 0;
-                ctx.strokeStyle = "red";
+                ctx.strokeStyle = "transparent";
                 ctx.stroke();
 
                 console.log(coordinates.x, coordinates.y);
@@ -79,16 +81,9 @@ class ApplyFilter {
             
         })
     }
-
-
-    static addFilter(x, y) {
-        ctx.fillStyle = "rgb(255, 0, 0)";
-        ctx.globalAlpha = 0.5;
-
-        // x, y, width, height
-        // ctx.fillRect(x, y, canvas.width / 2, canvas.height);
-    }
 }
 
-ApplyFilter.drawImage();
-ApplyFilter.drawSelectedZone();
+addEventListener("DOMContentLoaded", () => {
+    ApplyFilter.drawImage();
+    ApplyFilter.drawFilterArea();
+})

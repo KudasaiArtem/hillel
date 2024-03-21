@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.preview_page {
+    @include flex-between;
+
+    padding-top: 88px;
+}
+
+.preview {
+    padding-top: 27px;
+}
+
+.preview_info {
+    @include flex-column;
+    
+    gap: 20px;
+
+    margin-bottom: 50px;
+}
+
+#get_started {
+    border-radius: 10px;
+    background-color: $primary;
+    line-height: 156%;
+    font-size: map-get($font-size, "small");
+    font-weight: map-get($font-weight, "bold");
+    color: $white;
+    padding: 17px 77px;
+    border: 0;
+    position: relative;
+
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: 25px;
+    //     left: 0;
+    //     right: 0;
+    //     margin: 0 auto;
+    //     border-radius: 10px;
+    //     width: 80%;
+    //     height: 80%;
+    //     filter: blur(54px);
+    //     background: #f5383859;
+    // }
+
+    filter: drop-shadow(0 25px 54px #f5383859);
+}
+
+.Illustration_1 {
+    margin-right: -66px;
+}
+
+// ---------------------------------
+
+.statistic {
+    @include flex-row;
+    justify-content: space-around;
+
+    padding: 37px 0;
+    background-color: $white;
+    border-radius: 10px;
+
+    position: relative;
+    z-index: 1;
+
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: 52px;
+    //     left: 0;
+    //     right: 0;
+    //     margin: 0 auto;
+    //     border-radius: 10px;
+    //     width: 80%;
+    //     height: 189px;
+    //     filter: blur(54px);
+    //     background: #0d102559;
+    //     z-index: 0;
+    // }
+
+    filter: drop-shadow(0 52px 54px #0d102521);
+
+    margin-top: 102px;
+}
+
+.block {
+    @include flex-align-center;
+
+    gap: 32px;
+}
+
+.block_num {
+    font-weight: map-get($font-weight, "bold");
+    font-size: 25px;
+    line-height: 120%;
+    color: $black;
+    display: block;
+}
+
+.block_info {
+    font-weight: map-get($font-weight, "regular");
+    font-size: map-get($font-size, "medium");
+    line-height: 150%;
+    color: $gray;
+    display: block;
+}
+
+.circle {
+    background: #ffecec;
+    border-radius: 70px;
+    width: 55px;
+    height: 55px;
+
+    @include flex-align-center;
+    justify-content: center;
+}
+
+// --------------------------------------------------------------
+.description {
+    @include flex-between;
+
+    padding: 94px 0 130px 0;
+}
+
+.description_info {
+    @include flex-column;
+
+    gap: 20px;
+
+    padding-top: 54px;
+}
+
+.advantages_list {
+    @include flex-column;
+
+    gap: 15px;
+
+    li {
+        @include flex-align-center;
+        @include small-list;
+
+        gap: 12px;
+
+        // &::before {
+        //     content: url("../img/tick.svg");
+        //     margin-right: 12px;
+        //     vertical-align: baseline;
+        //     display: inline-block;
+        // }
+    }
+}
+
+// ---------------------------------------------------------------
+.two_block_bg {
+    background: linear-gradient(180deg, #f8f8f8 24%, #ffffff 100%);
+}
+
+.plan {
+    @include flex-column;
+    @include flex-align-center;
+
+    padding: 80px 0 150px 0;
+    gap: 60px;
+
+    p {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.cards {
+    @include flex-row;
+
+    justify-content: space-around;
+    gap: 24px;
+    width: 100%;
+}
+
+.card {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: $white;
+    padding: 80px 0 50px 0;
+
+    @include flex-column;
+    @include flex-between;
+
+    flex-basis: 330px;
+}
+
+.card_info {
+    @include flex-column;
+    @include flex-align-center;
+
+    gap: 30px;
+
+    margin-bottom: 50px
+}
+
+.options_list {
+    @include flex-column;
+
+    gap: 10px;
+
+    li {
+        @include flex-align-center;
+
+        gap: 24px;
+    }
+}
+
+.price {
+    @include flex-column;
+    @include flex-align-center;
+
+    gap: 20px;
+
+    > span {
+        font-family: var(--font-family);
+        font-weight: map-get($font-weight, "medium");
+        font-size: 25px;
+        line-height: 120%;
+        color: $black;
+
+        span {
+            font-weight: map-get($font-weight, "regular");
+            color: $gray;
+        }
+    }
+
+    button {
+        border: 2px solid $primary;
+        border-radius: 50px;
+        background-color: transparent;
+        padding: 12px 62px;
+
+        color: $primary;
+        font-size: map-get($font-size, "small");
+        font-weight: map-get($font-weight , "bold");
+    }
+}
+
+// ---------------------------------------------------
+.locations {
+    p {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.map {
+    margin-top: 154px;
+}
+
+.partners {
+    @include flex-between;
+    @include flex-align-center;
+}
+

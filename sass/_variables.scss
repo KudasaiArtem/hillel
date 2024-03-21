@@ -1,0 +1,52 @@
+$font: "Rubik";
+$font-weight: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+
+$font-size: (
+    "e-small": 14px,
+    "small": 16px,
+    "medium": 20px,
+    "large": 35px,
+);
+
+$black: #0b132a;
+$gray: #4f5665;
+$white: #fff;
+
+$primary: #f53838;
+
+@font-face {
+    font-family: $font;
+    src: url("../font/Rubik.ttf");
+    font-weight: 400;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin small-list {
+    font-weight: map-get($font-weight, "regular");
+    font-size: map-get($font-size, "e-small");
+    line-height: 214%;
+    color: $gray;
+}

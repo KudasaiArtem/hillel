@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+button,
+a {
+    cursor: pointer;
+}
+
 body {
     background-color: white;
 }
@@ -30,7 +35,8 @@ body {
     margin-bottom: 50px;
 }
 
-#get_started {
+#get_started,
+#subscribe_now {
     border-radius: 10px;
     background-color: $primary;
     line-height: 156%;
@@ -39,7 +45,6 @@ body {
     color: $white;
     padding: 17px 77px;
     border: 0;
-    position: relative;
 
     // &::after {
     //     content: "";
@@ -163,7 +168,7 @@ body {
 }
 
 // ---------------------------------------------------------------
-.two_block_bg {
+.plan_block_bg {
     background: linear-gradient(180deg, #f8f8f8 24%, #ffffff 100%);
 }
 
@@ -202,6 +207,8 @@ body {
     @include flex-between;
 
     flex-basis: 330px;
+    
+    transition: 0.2s;
 }
 
 .card_info {
@@ -276,4 +283,145 @@ body {
     @include flex-between;
     @include flex-align-center;
 }
+
+// ----------------------------------------------------------
+.reviews_container {
+    padding-top: 50px;
+}
+
+.reviews_header {
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.reviews {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.review {
+    border: 2px solid #dddddd;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px
+}
+
+.review_user_row {
+    @include flex-between;
+    @include flex-align-center;
+
+    margin-bottom: 20px;
+}
+
+.review_text {
+    color: $black;
+}
+
+.person {
+    @include flex-row;
+
+    gap: 20px;
+
+    img {
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+// .person_image {
+    
+// }
+
+.person_info {
+    span {
+        font-weight: map-get($font-weight, "regular");
+        font-size: map-get($font-size, "e-small");
+        // line-height: 214%;
+        // text-align: center;
+        color: $gray;
+    }
+}
+
+.rating {
+    @include flex-align-center;
+
+    gap: 10px;
+
+    span {
+        font-weight: map-get($font-weight, "regular");
+        font-size: map-get($font-size, "small");
+        line-height: 187%;
+        color: $black;
+    }
+}
+
+.slider_interactions {
+    @include flex-between;
+    @include flex-align-center;
+
+    padding-top: 60px;
+}
+
+.markers {
+    @include flex-row;
+    
+    gap: 15px;
+
+    div {
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        background: #dde0e4;
+    }
+}
+
+.slider_btn {
+    @include flex-row;
+
+    gap: 20px;
+}
+
+#slider_btn_R,
+#slider_btn_L {
+    border-radius: 100%;
+    border: 0;
+    border: 2px solid $primary;
+    padding: 18px;
+
+    @include flex-align-center;
+}
+
+#slider_btn_L {
+    background: none;
+}
+
+#slider_btn_R {
+    background: $primary;
+}
+
+// -------------------------------------------
+.subscribe {
+    @include flex-align-center;
+    @include flex-between;
+
+    padding: 58px 70px;
+    background: $white;
+    border-radius: 10px;
+    margin-bottom: -128px;
+
+    h2 {
+        margin-bottom: 20px;
+        line-height: 129%;
+    }
+
+    filter: drop-shadow(0 16px 54px #0d102521);
+}
+
 

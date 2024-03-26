@@ -1,0 +1,78 @@
+.navigation a,
+.footer_links nav ul a,
+#sign_in {
+    transition: 0.2s;
+
+    &:hover {
+        color: $primary;
+    }
+
+    &:active {
+        color: #878a92;
+    }
+}
+
+#sign_up {
+    transition: 0.2s;
+
+    &:hover {
+        color: $white;
+        background-color: $primary;
+    }
+
+    &:active {
+        border: 1px solid #8a1e1e;
+        background-color: #8a1e1e;
+    }
+}
+
+#free,
+#standard,
+#premium {
+    transition: 0.2s;
+
+    &:hover {
+        color: $white;
+        background-color: $primary;
+    }
+
+    &:active {
+        border: 2px solid #8a1e1e;
+        background-color: #8a1e1e;
+    }
+}
+
+#get_started,
+#subscribe_now {
+    transition: 0.2s;
+
+    &:hover {
+        background-color: #cc1313;
+    }
+    
+    &:active {
+        background-color: #8a1e1e;
+    }
+}
+
+.social_networks a {
+    transition: 0.2s;
+
+    &:hover {
+        background-color: #cc1313;
+    }
+    
+    &:active {
+        background-color: #8a1e1e;
+    }
+}
+
+.selected_card {
+    border: 2px solid $primary;
+}
+
+.selected_btn {
+    color: $white !important; 
+    background-color: $primary !important;
+    filter: drop-shadow(0 25px 54px #f5383859) !important;
+}

@@ -1,0 +1,82 @@
+footer {
+    background: #f8f8f8;
+
+    padding-top: 180px;
+    padding-bottom: 100px;
+}
+
+.footer_align {
+    @include flex-between;
+}
+
+.footer_align_info {
+    @include flex-column;
+
+    gap: 30px;
+
+    p {
+        span {
+            font-weight: map-get($font-weight, "medium");
+        }
+    }
+}
+
+.footer_description {
+    @include flex-column;
+
+    gap: 20px;
+
+    p {
+        span {
+            font-weight: map-get($font-weight, "medium");
+        }
+    }
+}
+
+.social_networks {
+    @include flex-row;
+
+    gap: 20px;
+
+    a {
+        width: 34px;
+        height: 34px;
+        // display: contents;
+        text-decoration: none;
+        background: $primary;
+        border-radius: 100%;
+
+        svg {
+            transform: scale(1.05); // для того щоб не було видно краї тегу <a></a>
+        }
+    }
+}
+
+.footer_links {
+    @include flex-between;
+
+    max-width: 570px;
+    width: 100%;
+
+    gap: 16px;
+
+    nav {
+        span {
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        ul {
+            @include flex-column;
+            gap: 10px;
+
+            a {
+                text-decoration: none;
+                font-weight: map-get($font-weight, "regular");
+                font-size: map-get($font-size, "small");
+                line-height: 187%;
+                color: $gray;
+            }
+        }
+    }
+}

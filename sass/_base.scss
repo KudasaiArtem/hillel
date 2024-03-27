@@ -385,6 +385,10 @@ body {
     @include e-md {
         margin-top: 54px;
     }
+
+    @include sm {
+        display: none;
+    }
 }
 
 .partners {

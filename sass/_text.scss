@@ -7,9 +7,14 @@ h1 {
     line-height: 140%;
     color: black;
     font-weight: map-get($font-weight, "medium");
+    max-width: 555px;
 
     span {
         font-weight: map-get($font-weight, "bold");
+    }
+
+    @include ex-lg {
+        font-size: 40px;
     }
 }
 
@@ -18,6 +23,8 @@ p {
     font-size: map-get($font-size, "small");
     line-height: 187%;
     color: $gray;
+
+    max-width: 555px;
 }
 
 h2 {
@@ -25,6 +32,8 @@ h2 {
     font-size: map-get($font-size, "large");
     line-height: 143%;
     color: $black;
+
+    max-width: 380px;
 }
 
 h3 {
@@ -32,4 +41,9 @@ h3 {
     font-size: 18px;
     line-height: 167%;
     color: $black;
+}
+
+.center_header_text {
+    @include flex-column;
+    @include flex-align-center;
 }

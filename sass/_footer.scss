@@ -3,10 +3,20 @@ footer {
 
     padding-top: 180px;
     padding-bottom: 100px;
+
+    @media (max-width: 900px) {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
 }
 
 .footer_align {
     @include flex-between;
+
+    @include lg {
+        @include flex-column;
+        gap: 30px;
+    }
 }
 
 .footer_align_info {

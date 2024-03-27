@@ -15,16 +15,40 @@ body {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
+
+    @include ex-lg {
+        max-width: 960px;
+    }
+
+    @include lg {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
 }
 
 .preview_page {
     @include flex-between;
 
     padding-top: 88px;
+
+    @include e-md {
+        @include flex-column;
+        @include flex-align-center;
+
+        gap: 16px;
+        padding-top: 36px;
+    }
 }
 
 .preview {
     padding-top: 27px;
+
+    @include e-lg {
+        padding: 0;
+
+        @include flex-column;
+        @include flex-align-center;
+    }
 }
 
 .preview_info {
@@ -65,6 +89,20 @@ body {
 
 .Illustration_1 {
     margin-right: -66px;
+
+    @include e-lg {
+        margin-right: 0;
+    }
+}
+
+.Illustration_1 object {
+    @include e-lg {
+        width: 540px;
+    }
+
+    @include e-md {
+        width: 100%;
+    }
 }
 
 // ---------------------------------
@@ -80,30 +118,30 @@ body {
     position: relative;
     z-index: 1;
 
-    // &::after {
-    //     content: "";
-    //     position: absolute;
-    //     top: 52px;
-    //     left: 0;
-    //     right: 0;
-    //     margin: 0 auto;
-    //     border-radius: 10px;
-    //     width: 80%;
-    //     height: 189px;
-    //     filter: blur(54px);
-    //     background: #0d102559;
-    //     z-index: 0;
-    // }
-
     filter: drop-shadow(0 52px 54px #0d102521);
 
     margin-top: 102px;
+
+    @include md {
+        @include flex-column;
+        @include flex-align-center;
+
+        gap: 32px;
+
+        > svg {
+            display: none;
+        }
+    }
 }
 
 .block {
     @include flex-align-center;
 
     gap: 32px;
+
+    @include md {
+        width: 178px;
+    }
 }
 
 .block_num {
@@ -137,6 +175,27 @@ body {
     @include flex-between;
 
     padding: 94px 0 130px 0;
+
+    @media (max-width: 900px) {
+        @include flex-align-center;
+        flex-direction: column-reverse;
+        gap: 16px;
+
+        padding-top: 45px;
+        padding-bottom: 75px;
+    }
+}
+
+.Illustration_2 {
+    object {
+        @include ex-lg {
+            width: 420px;
+        }
+
+        @media (max-width: 860px) {
+            width: 100%;
+        }
+    }
 }
 
 .description_info {
@@ -145,6 +204,22 @@ body {
     gap: 20px;
 
     padding-top: 54px;
+
+    p {
+        max-width: 428px;
+    }
+
+    @media (max-width: 900px) {
+        @include flex-align-center;
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center
+        }
+    }
 }
 
 .advantages_list {
@@ -187,6 +262,11 @@ body {
     h2 {
         text-align: center;
     }
+
+    @include md {
+        padding-top: 40px;
+        padding-bottom: 75px;
+    }
 }
 
 .cards {
@@ -195,6 +275,11 @@ body {
     justify-content: space-around;
     gap: 24px;
     width: 100%;
+
+    @media (max-width: 860px) {
+        @include flex-column;
+        width: 70%;
+    }
 }
 
 .card {
@@ -209,6 +294,11 @@ body {
     flex-basis: 330px;
     
     transition: 0.2s;
+
+    @media (max-width: 900px) {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
 }
 
 .card_info {
@@ -277,11 +367,35 @@ body {
 
 .map {
     margin-top: 154px;
+
+    @include flex-row;
+    
+    justify-content: center;
+
+    object {
+        @include ex-lg {
+            width: 900px;
+        }
+
+        @include lg {
+            width: 100%
+        }
+    }
+
+    @include e-md {
+        margin-top: 54px;
+    }
 }
 
 .partners {
     @include flex-between;
     @include flex-align-center;
+
+    @include ex-lg {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
 }
 
 // ----------------------------------------------------------
@@ -292,6 +406,7 @@ body {
 .reviews_header {
     h2 {
         text-align: center;
+        max-width: 420px;
     }
 
     p {
@@ -422,6 +537,25 @@ body {
     }
 
     filter: drop-shadow(0 16px 54px #0d102521);
+
+    @media (max-width: 900px) {
+        @include flex-column;
+
+        gap: 16px;
+        margin-bottom: 0;
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    @include sm {
+        padding: 28px 16px;
+    }
 }
 
 
